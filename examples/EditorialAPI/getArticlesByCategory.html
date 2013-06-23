@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Get Articles by Category</title>
+	
+</head>
+
+<body>
+	<img src="http://media.ed.edmunds-media.com/honda/crosstour/2012/evox/2012_honda_crosstour_4dr-hatchback_ex-l_pdo_evox_1_500.jpg" />
+	<div id="review-body"></div>
+	<script>
+	  	window.sdkAsyncInit = function() {
+	    	// Instantiate the SDK
+			var res = new EDMUNDSAPI('4qy46gr34z8w92a3gqjmdbkq');
+		
+			// Get articles
+			var options = {
+				"category": "awards",
+				"limit": "0,5"
+			};
+		
+			// Callback function to be called when the API response is returned
+			function success(reviews) {
+				var len = reviews.length;
+				var html = [];
+				for (i=0; i<len; i++) {
+					html.push('<a href="'+reviews[i].link+'"><h2>'+reviews[i].title+'</h2></a>');
+					html.push(	'<div class="body">'+reviews[i].content+'</div>');
+				}
+				var body = document.getElementById('review-body');
+				body.innerHTML = html.join('');
+			}
+		
+			// Oops, Houston we have a problem
+			function fail() {
+				console.log(data);
+			}
+		
+			// Fire the API call
+			res.api('/v1/content/', options, success, fail);
+
+		    // Additional initialization code such as adding Event Listeners goes here
+	  };
+
+	  // Load the SDK asynchronously
+	  (function(d, s, id){
+	     	var js, sdkjs = d.getElementsByTagName(s)[0];
+	     	if (d.getElementById(id)) {return;}
+	     	js = d.createElement(s); js.id = id;
+	     	js.src = "../../edmunds.api.sdk.js";
+	     	sdkjs.parentNode.insertBefore(js, sdkjs);
+	   }(document, 'script', 'edmunds-jssdk'));
+	</script>
+</body>
+</html>
