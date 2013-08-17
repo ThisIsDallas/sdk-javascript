@@ -152,7 +152,8 @@ function EDMUNDSAPI(key) {
             url: baseUrl + method + queryString,
             timeout: 7000,
             success: successCallback,
-            error: errorCallback
+            error: errorCallback,
+			cache: true
         });
 	};
 	
