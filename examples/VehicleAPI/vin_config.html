@@ -17,7 +17,10 @@
 			// Callback function to be called when the API response is returned
 			function success(res) {
 				var body = document.getElementById('results-body');
-				body.innerHTML = "The first models for Lexus in 2014 in the response is " + res.link.href;
+				if (res.error) {
+					body.innerHTML = "ERROR: " + res.error.message;
+				}
+				body.innerHTML = "The VIN's style is " + res.styles[0].name;
 			}
 			// Oops, Houston we have a problem!
 			function fail(data) {

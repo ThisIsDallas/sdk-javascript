@@ -15,6 +15,9 @@
 			// Callback function to be called when the API response is returned
 			function success(res) {
 				var body = document.getElementById('results-body');
+				if (res.error) {
+					body.innerHTML = "ERROR: " + res.error.message;
+				}
 				body.innerHTML = "The first make in the response is " + res.makes[0].name;
 			}
 			// Oops, Houston we have a problem!

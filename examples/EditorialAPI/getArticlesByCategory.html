@@ -30,6 +30,9 @@
 					html.push(	'<div class="body">'+reviews[i].content+'</div>');
 				}
 				var body = document.getElementById('review-body');
+				if (res.error) {
+					body.innerHTML = "ERROR: " + reviews.error.message;
+				}
 				body.innerHTML = html.join('');
 			}
 		
