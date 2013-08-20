@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset=utf-8>
-	<title>Get a list of makes</title>
+	<meta charset="utf-8" />
+	<title>Get VIN Configurator by VIN</title>
 </head>
 <body>
 	<div id="results-body"></div>
 	<script>
 	  	window.sdkAsyncInit = function() {
 	    	// Instantiate the SDK
-			var res = new EDMUNDSAPI('your api key');
+			var res = new EDMUNDSAPI('you api key');
 			// Optional parameters
 			var options = {
 				"year": 2014
@@ -17,14 +17,14 @@
 			// Callback function to be called when the API response is returned
 			function success(res) {
 				var body = document.getElementById('results-body');
-				body.innerHTML = "The first models for Lexus in 2014 in the response is " + res.models[0].name;
+				body.innerHTML = "The first models for Lexus in 2014 in the response is " + res.link.href;
 			}
 			// Oops, Houston we have a problem!
 			function fail(data) {
 				console.log(data);
 			}
 			// Fire the API call
-			res.api('/api/vehicle/v2/lexus/models', options, success, fail);
+			res.api('/api/v1/vehicle/vin/WAUKEAFM1DA032804/configuration', options, success, fail);
 		    // Additional initialization code such as adding Event Listeners goes here
 	  };
 	  // Load the SDK asynchronously
