@@ -18,6 +18,7 @@
 *  limitations under the License.
 *
 *  @author Ismail Elshareef (ielshareef@edmunds.com)
+*  @author Michael Bock (mbock@edmunds.com)
 */
 
 /**
@@ -57,12 +58,18 @@ function EDMUNDSAPI(key) {
 
 	/**
 	 * The base URL for the API
+	 * http or https depending on the site, defaulting to http: if other.
 	 *
 	 * @property _base_url
 	 * @private
 	 * @type string
 	 */
-	var _base_url = window.location.protocol + "//api.edmunds.com";
+	if (window.location.protocol == "http:" || window.location.protocol == "https:") {
+		var _base_url = window.location.protocol + "//api.edmunds.com";
+	}
+	else {
+		var _base_url = "http://api.edmunds.com";
+	}
 	
 	/**
 	 * The base URL for photos

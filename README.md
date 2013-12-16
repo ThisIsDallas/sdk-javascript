@@ -1,6 +1,6 @@
 # Edmunds API JavaScript SDK
 
-A simple wrapper to help you make API calls against the Edmunds API. The SDK is an open-source in github and all is welcome to contribute. Except as otherwise noted, the Edmunds API JavaScript SDK is licensed under the [Apache 2.0 License.][license]
+A simple wrapper to help you make API calls against the Edmunds API. The SDK is all open-source on GitHub, and all are welcome to contribute. Except as otherwise noted, the Edmunds API JavaScript SDK is licensed under the [Apache 2.0 License.][license]
 
 Before using the SDK, it's highly recommended that you check out the following:
 
@@ -55,13 +55,15 @@ You also need to define the sdkAsyncInit function that the SDK calls when done l
 	    // Additional initialization code goes here
   };
 
-## What's on Here
+## What's Here
 
-- examples/: HTML examples of how to use the SDK. Still a work in progress!
-- .gitignore: Runtime files and folders that do not need to be part of this repository
-- LICENSE: License agreement for using this SDK
-- NOTICE: A reference to the License Agreement
-- README.md: You're looking at it :)
+* examples/: HTML examples of how to use the SDK. Still a work in progress!
+* .gitignore: Runtime files and folders that do not need to be part of this repository
+* LICENSE: License agreement for using this SDK
+* NOTICE: A reference to the License Agreement
+* HISTORY.md: A version history
+* AUTHORS.md: Info about the developers and how to contribute!
+* README.md: You're looking at it :)
 
 ## SDK Status
 
