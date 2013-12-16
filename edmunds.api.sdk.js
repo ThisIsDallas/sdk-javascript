@@ -45,7 +45,7 @@ function EDMUNDSAPI(key) {
 	 * @private
 	 * @type string
 	 */
-	var _version = "0.1.6";
+	var _version = "0.1.7";
 	
 	/**
 	 * Assigned API Key. Register for an API Key <a href="http://developer.edmunds.com/apps/register">here</a>
